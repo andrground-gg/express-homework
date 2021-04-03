@@ -1,0 +1,25 @@
+<h1>Archive</h1>
+
+{{#if todos.length}}
+    <ul>
+        {{#each todos}}
+            <li class="todo">
+                <form action="/unarchiving" method="POST">
+                    <label>
+                        {{#if completed}}
+                            <input type="checkbox" name="completed" checked disabled="disabled">
+                            <span class="completed">{{title}}</span>
+                        {{else}}
+                            <input type="checkbox" name="completed" disabled="disabled">
+                            <span>{{title}}</span>
+                        {{/if}}
+                        <input type="hidden" value="{{_id}}" name="id">
+                        <button class="btn btn-small" type="submit">Unarchive</button>
+                    </label>
+                </form>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No todos in archive at the moment</p>
+{{/if}}
