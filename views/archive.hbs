@@ -4,7 +4,7 @@
     <ul>
         {{#each todos}}
             <li class="todo">
-                <form action="/unarchiving" method="POST">
+                <form action="/unarchive" method="POST">
                     <label>
                         {{#if completed}}
                             <input type="checkbox" name="completed" checked disabled="disabled">

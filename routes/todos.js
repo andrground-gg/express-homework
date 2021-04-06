@@ -42,14 +42,14 @@ router.post('/complete', async (req, res) => {
     res.redirect('/');
 });
 
-router.post('/archiving', async (req, res) => {
+router.post('/archive', async (req, res) => {
     const todo = await Todo.findById(req.body.id);
     todo.archived = true;
     await todo.save();
     res.redirect('/');
 });
 
-router.post('/unarchiving', async (req, res) => {
+router.post('/unarchive', async (req, res) => {
     const todo = await Todo.findById(req.body.id);
     todo.archived = false;
     await todo.save();
